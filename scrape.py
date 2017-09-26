@@ -1,12 +1,12 @@
 # coding: UTF-8
-import urllib2
-from bs4 import BeautifulSoup
 
+from bs4 import BeautifulSoup
+import urllib
 # アクセスするURL
 url = "http://www.nikkei.com/"
 
 # URLにアクセスする htmlが帰ってくる → <html><head><title>経済、株価、ビジネス、政治のニュース:日経電子版</title></head><body....
-html = urllib2.urlopen(url)
+html = urllib.urlopen(url)
 
 # htmlをBeautifulSoupで扱う
 soup = BeautifulSoup(html, "html.parser")
@@ -18,7 +18,7 @@ title_tag = soup.title
 title = title_tag.string
 
 # タイトル要素を出力
-print title_tag
+print (title_tag)
 
 # タイトルを文字列を出力
-print title
+print (title)
